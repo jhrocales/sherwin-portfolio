@@ -727,8 +727,7 @@ h3.my-profession {
   padding: 0 50px;
 }
 
-
-/* Screens Responsive */
+/* Screens Responsive - Replace your entire media queries section with this */
 
 @media (max-width: 1199px) {
   .aside {
@@ -746,7 +745,6 @@ h3.my-profession {
 }
 
 @media (max-width:991px) {
-
   .contact .contact-info-item,
   .portfolio .portfolio-item,
   .service .service-item {
@@ -754,20 +752,53 @@ h3.my-profession {
     max-width: 50%;
   }
 
+  /* Make home section stack vertically */
+  .home {
+    flex-direction: column;
+  }
   
   .home .home-info {
     flex: 0 0 100%;
     max-width: 100%;
+    order: 2; /* Put text content second */
+    text-align: center; /* Center align text on mobile */
   }
 
   .home .home-img {
-    display: none;
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 1; /* Put image first */
+    margin-bottom: 30px; /* Add some spacing */
+  }
+
+  /* Adjust image styling for mobile */
+  .home .home-img img {
+    max-width: 280px; /* Slightly smaller on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Adjust decorative borders for mobile */
+  .home-img::before {
+    height: 60px;
+    width: 60px;
+    border-top: 8px solid var(--skin-color);
+    border-left: 8px solid var(--skin-color);
+    left: -15px;
+    top: -30px;
+  }
+
+  .home-img::after {
+    height: 60px;
+    width: 60px;
+    border-bottom: 8px solid var(--skin-color);
+    border-right: 8px solid var(--skin-color);
+    right: 15px;
+    bottom: -30px;
   }
 }
 
-@media (max-width: 767px)
-{
-  .contact .contact-form .col-6
+@media (max-width: 767px) {
+  .contact .contact-form .col-6,
   .contact .contact-info-item,
   .portfolio .portfolio-item,
   .service .service-item,
@@ -778,7 +809,27 @@ h3.my-profession {
     flex: 0 0 100%;
     max-width: 100%; 
   }
+
+  /* Further optimize image for very small screens */
+  .home .home-img img {
+    max-width: 250px;
+  }
+
+  /* Smaller decorative elements on very small screens */
+  .home-img::before,
+  .home-img::after {
+    height: 50px;
+    width: 50px;
+    border-width: 6px;
+  }
+
+  .home-img::before {
+    left: -10px;
+    top: -25px;
+  }
+
+  .home-img::after {
+    right: 10px;
+    bottom: -25px;
+  }
 }
-
-
-
