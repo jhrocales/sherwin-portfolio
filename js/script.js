@@ -3,12 +3,11 @@
 var typed = new Typed(".typing", {
   strings: [
     "",
-    "Social Media Management",
-    "SEO",
-    "Email Marketing",
-    "Wordpress Content Management",
-    "Basic Graphic Design",
-    "General Virtual Assistant",
+    "Digital Marketer",
+    "Email Marketer",
+    "SEO Specialist",
+    "Social Media Manager",
+    "General Virtual Asisstant",
   ],
   typeSpeed: 80,
   BackSpeed: 60,
